@@ -1,0 +1,14 @@
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1em;
+}
+
+video {
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
