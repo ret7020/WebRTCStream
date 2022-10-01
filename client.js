@@ -113,6 +113,21 @@ function start_recording() {
 
                 recorder.stopRecording(function () {
                     blob = recorder.getBlob();
+                    var fileName = getFileName('webm');
+
+                    var fileObject = new File([blob], fileName, {
+                        type: 'video/webm'
+                    });
+
+                    uploadToPHPServer(fileObject, function(response, fileDownloadURL) {
+                        if(response !== 'ended') {
+                            document.getElementById('header').innerHTML = response; // upload progress
+                            return;
+                        }
+
+                        alert('Successfully uploaded recorded blob.');
+                    });
+
 
                     document.querySelector('video').srcObject = null;
                     document.querySelector('video').src = URL.createObjectURL(blob);
