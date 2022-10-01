@@ -10,7 +10,7 @@ function uploadToPHPServer(blob, callback) {
     var upload_directory = upload_url;
     
     makeXMLHttpRequest(upload_url, formData, function(progress) {
-        if (progress !== 'upload-ended') {
+        if (progress !== 'upload-ended') {ё
             callback(progress);
             return;
         }

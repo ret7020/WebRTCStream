@@ -15,7 +15,7 @@ function invokeGetDisplayMedia(success, error) {
         video: {
             displaySurface: 'monitor',
             logicalSurface: true,
-            cursor: 'always'
+            cursor: 'always',
         }
     };
 
@@ -99,7 +99,8 @@ function start_recording() {
 
             var recorder = RecordRTC([screen, camera], {
                 type: 'video',
-                mimeType: 'video/webm',
+                mimeType: 'video/webm;codecs=vp8',
+                videoBitsPerSecond: 1200000,
                 previewStream: function (s) {
                     document.querySelector('video').muted = true;
                     document.querySelector('video').srcObject = s;
